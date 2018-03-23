@@ -60,7 +60,7 @@ namespace TrelloWunderlistImporter
                         foreach (var wSubTask in wSubTasks)
                         {
                             var itemPos = checklistItemPositions.FirstOrDefault(x => x.CheckListItemId == wSubTask.id)?.Position.ToString() ?? "bottom";
-                            var item = AddChecklistItem(checklist.id, wSubTask.title, itemPos);
+                            var item = AddChecklistItem(checklist.id, wSubTask.title, itemPos, wSubTask.completed);
                         }
                     }
                 }
@@ -83,7 +83,7 @@ namespace TrelloWunderlistImporter
                         foreach (var wSubTask in wSubTasks)
                         {
                             var itemPos = checklistItemPositions.FirstOrDefault(x => x.CheckListItemId == wSubTask.id)?.Position.ToString() ?? "bottom";
-                            var item = AddChecklistItem(checklist.id, wSubTask.title, itemPos);
+                            var item = AddChecklistItem(checklist.id, wSubTask.title, itemPos, wSubTask.completed);
                         }
                     }
                 }
@@ -129,9 +129,9 @@ namespace TrelloWunderlistImporter
             return checklist;
         }
 
-        public async Task<Models.Trello.ChecklistItem> AddChecklistItem(string idChecklist, string name, string pos = "bottom")
+        public async Task<Models.Trello.ChecklistItem> AddChecklistItem(string idChecklist, string name, string pos = "bottom", bool isChecked = false)
         {
-            var resp = await _client.PostAsync($@"https://api.trello.com/1/checklists/{idChecklist}/checkItems?name={Uri.EscapeDataString(name)}&pos={pos}&key={TRELLO_KEY}&token={TRELLO_TOKEN}", null);
+            var resp = await _client.PostAsync($@"https://api.trello.com/1/checklists/{idChecklist}/checkItems?name={Uri.EscapeDataString(name)}&pos={pos}&checked={isChecked.ToString().ToLower()}&key={TRELLO_KEY}&token={TRELLO_TOKEN}", null);
             var data = await resp.Content.ReadAsStringAsync();
             Console.WriteLine(data);
             var checklistItem = JsonConvert.DeserializeObject<Models.Trello.ChecklistItem>(data);
