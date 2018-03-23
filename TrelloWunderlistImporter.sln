@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloWunderlistImporter", "TrelloWunderlistImporter\TrelloWunderlistImporter.csproj", "{8ADFDF4D-47DE-4309-B91B-650B5584334A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ADFDF4D-47DE-4309-B91B-650B5584334A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADFDF4D-47DE-4309-B91B-650B5584334A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADFDF4D-47DE-4309-B91B-650B5584334A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADFDF4D-47DE-4309-B91B-650B5584334A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F87B3AC-2C4B-4216-8B3D-E242A132CC1B}
+	EndGlobalSection
+EndGlobal
