@@ -1,0 +1,29 @@
+This program will enable you to submit all your Wunderlist data backup into a specific Trello board.
+
+----------------------------
+
+STEP BY STEP PROCEDURE :
+
+1. First of all, you will need to export your data from Wunderlist as a JSON file.
+To get a JSON file of your Wunderlist data, please follow instructions at : https://6wunderkinder.desk.com/customer/en/portal/articles/2364564-how-can-i-backup-export-my-data-
+
+2. Then, you will need to initialize the four string constants :
+- WUNDERLIST_BACKUP_FILENAME : must be set with the full path of the Wunderlist backup JSON file.
+
+- TRELLO_KEY : must be set with your personal Trello API key.
+Please log in to Trello website and go to this URL : https://trello.com/app-key
+The Trello API key is the first ID given in this Web page.
+
+- TRELLO_TOKEN : must be set with a token that you had generated.
+Please log in to Trello website and go to this URL : https://trello.com/app-key
+Look for the link to generate manually a token, in order to get your own token.
+
+- TRELLO_BOARD_SHORTID : must be set with the real ID of your targetted board.
+Please open the targetted board in the Trello website and check your URL.
+You will have to replace the name of your board by "reports.json"
+https://trello.com/b/abcdefgh/my-board-name into https://trello.com/b/abcdefgh/reports.json
+Launch the URL updated in your browser and get your Trello board short ID in the first field "id" of the JSON structure of your board.
+
+3. You're free to run the program and get all your Wunderlist tasks submitted to your Trello board.
+
+Enjoy !
